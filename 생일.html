@@ -1,0 +1,890 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<style>
+/* Reset */
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	ol, ul {
+		list-style: none;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+
+
+	
+/* Type */
+
+	body {
+		background-color: #fff;
+		color: #777;
+	}
+
+	body, input, select, textarea {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 13pt;
+		font-weight: normal;
+		line-height: 2;
+	}
+
+		
+	a {
+		-moz-transition: color 0.2s ease;
+		-webkit-transition: color 0.2s ease;
+		-ms-transition: color 0.2s ease;
+		transition: color 0.2s ease;
+		text-decoration: underline;
+	}
+
+		a:hover {
+			color: #000 !important;
+			text-decoration: none;
+		}
+
+	strong, b {
+		font-weight: bold;
+	}
+
+	em, i {
+		font-style: italic;
+	}
+
+	p {
+		margin: 0 0 2em 0;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold;
+		line-height: 1.5;
+		margin: 0 0 1em 0;
+	}
+
+		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+	h2 {
+		font-size: 1.75em;
+	}
+
+	h3 {
+		font-size: 1.35em;
+	}
+
+	h4 {
+		font-size: 1.1em;
+	}
+
+	h5 {
+		font-size: 0.9em;
+	}
+
+	h6 {
+		font-size: 1.1em;
+		text-align: right;
+		margin:0 0 0 0;
+	}
+
+	sub {
+		font-size: 0.8em;
+		position: relative;
+		top: 0.5em;
+	}
+
+	sup {
+		font-size: 0.8em;
+		position: relative;
+		top: -0.5em;
+	}
+
+	blockquote {
+		border-left: solid 4px;
+		font-style: italic;
+		margin: 0 0 2em 0;
+		padding: 0.5em 0 0.5em 2em;
+	}
+
+	code {
+		border-radius: 0;
+		border: solid 1px;
+		font-family: "Courier New", monospace;
+		font-size: 0.9em;
+		margin: 0 0.25em;
+		padding: 0.25em 0.65em;
+	}
+
+	pre {
+		-webkit-overflow-scrolling: touch;
+		font-family: "Courier New", monospace;
+		font-size: 0.9em;
+		margin: 0 0 2em 0;
+	}
+
+		pre code {
+			display: block;
+			line-height: 1.75;
+			padding: 1em 1.5em;
+			overflow-x: auto;
+		}
+
+	hr {
+		border: 0;
+		border-bottom: solid 1px;
+		margin: 2em 0;
+	}
+
+		hr.major {
+			margin: 3em 0;
+		}
+
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+
+	input, select, textarea {
+		color: #666;
+	}
+
+	a {
+		color: #00BC8A;
+	}
+
+	strong, b {
+		color: #666;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #666;
+	}
+
+	blockquote {
+		border-left-color: rgba(144, 144, 144, 0.25);
+	}
+
+	code {
+		background: rgba(144, 144, 144, 0.075);
+		border-color: rgba(144, 144, 144, 0.25);
+	}
+
+	hr {
+		border-bottom-color: rgba(144, 144, 144, 0.25);
+	}
+
+
+	
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		border-radius: 2em;
+		border: 0;
+		cursor: pointer;
+		display: inline-block;
+		font-size: 0.8em;
+		font-weight: bold;
+		height: 3.5em;
+		letter-spacing: 0.1em;
+		line-height: 3.65em;
+		padding: 0 3em;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+		
+
+
+	
+/* Image */
+
+	.image {
+		border-radius: 0;
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
+
+		.image img {
+			border-radius: 0;
+			display: block;
+		}
+
+		.image.left, .image.right {
+			max-width: 40%;
+		}
+
+			.image.left img, .image.right img {
+				width: 100%;
+			}
+
+		.image.left {
+			float: left;
+			margin: 0 1.5em 1em 0;
+			top: 0.25em;
+		}
+
+		.image.right {
+			float: right;
+			margin: 0 0 1em 1.5em;
+			top: 0.25em;
+		}
+
+		.image.fit {
+			display: block;
+			margin: 0 0 2em 0;
+			width: 100%;
+		}
+
+			.image.fit img {
+				width: 100%;
+			}
+
+		.image.main {
+			display: block;
+			margin: 0 0 3em 0;
+			width: 100%;
+		}
+
+			.image.main img {
+				width: 100%;
+			}
+
+
+	
+/* Spotlight */
+
+	.spotlight {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		border-bottom: solid 2px;
+		margin-bottom: 0.5em;
+	}
+
+		.spotlight .image {
+			width: 25%;
+		}
+
+			.spotlight .image img {
+				width: 100%;
+			}
+
+		.spotlight .content {
+			padding: 2em 0em 1em 2em;
+			width: 60%;
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.spotlight .image {
+				width: 55%;
+			}
+
+			.spotlight .content {
+				padding: 1.5em 2em 0.1em 2em;
+				width: 45%;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.spotlight {
+				display: block;
+				margin-bottom: 2em;
+			}
+
+				.spotlight .image {
+					width: 100%;
+				}
+
+				.spotlight .content {
+					padding: 1em 2em 0.1em 2em;
+					width: 100%;
+				}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.spotlight .content {
+				padding: 1em 1.5em 0.1em 1.5em;
+			}
+
+		}
+
+	.spotlight {
+		background-color: white;
+		border-bottom-color: rgba(144, 144, 144, 0.25);
+	}
+
+/* Wrapper */
+
+	.wrapper {
+		padding: 1em 0 1em 0;
+		position: relative;
+	}
+
+		.wrapper > .inner {
+			margin-left: auto;
+			margin-right: auto;
+			width: 70em;
+			max-width: 100%;
+		}
+
+		.wrapper.alt {
+			border-top: solid 2px;
+			border-top-color: rgba(144, 144, 144, 0.25);
+		}
+
+		
+		.wrapper.style2 {
+			background-color: #fafafa;
+			color: #777;
+		}
+
+			.wrapper.style2 input, .wrapper.style2 select, .wrapper.style2 textarea {
+				color: #666;
+			}
+
+			.wrapper.style2 a {
+				color: #00BC8A;
+			}
+
+			.wrapper.style2 strong, .wrapper.style2 b {
+				color: #666;
+			}
+
+			.wrapper.style2 h1, .wrapper.style2 h2, .wrapper.style2 h3, .wrapper.style2 h4, .wrapper.style2 h5, .wrapper.style2 h6 {
+				color: #666;
+			}
+
+			.wrapper.style2 blockquote {
+				border-left-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 code {
+				background: rgba(144, 144, 144, 0.075);
+				border-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 hr {
+				border-bottom-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 .box {
+				border-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 input[type="submit"],
+			.wrapper.style2 input[type="reset"],
+			.wrapper.style2 input[type="button"],
+			.wrapper.style2 button,
+			.wrapper.style2 .button {
+				background-color: #666;
+				color: #fafafa !important;
+			}
+
+				.wrapper.style2 input[type="submit"].alt,
+				.wrapper.style2 input[type="reset"].alt,
+				.wrapper.style2 input[type="button"].alt,
+				.wrapper.style2 button.alt,
+				.wrapper.style2 .button.alt {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 2px rgba(144, 144, 144, 0.25);
+					color: #666 !important;
+				}
+
+					.wrapper.style2 input[type="submit"].alt:hover,
+					.wrapper.style2 input[type="reset"].alt:hover,
+					.wrapper.style2 input[type="button"].alt:hover,
+					.wrapper.style2 button.alt:hover,
+					.wrapper.style2 .button.alt:hover {
+						background-color: rgba(144, 144, 144, 0.075);
+					}
+
+					.wrapper.style2 input[type="submit"].alt:active,
+					.wrapper.style2 input[type="reset"].alt:active,
+					.wrapper.style2 input[type="button"].alt:active,
+					.wrapper.style2 button.alt:active,
+					.wrapper.style2 .button.alt:active {
+						background-color: rgba(144, 144, 144, 0.2);
+					}
+
+					.wrapper.style2 input[type="submit"].alt.icon:before,
+					.wrapper.style2 input[type="reset"].alt.icon:before,
+					.wrapper.style2 input[type="button"].alt.icon:before,
+					.wrapper.style2 button.alt.icon:before,
+					.wrapper.style2 .button.alt.icon:before {
+						color: #bbb;
+					}
+
+				.wrapper.style2 input[type="submit"].special,
+				.wrapper.style2 input[type="reset"].special,
+				.wrapper.style2 input[type="button"].special,
+				.wrapper.style2 button.special,
+				.wrapper.style2 .button.special {
+					background-color: #00BC8A;
+					color: #ffffff !important;
+				}
+
+					.wrapper.style2 input[type="submit"].special:hover,
+					.wrapper.style2 input[type="reset"].special:hover,
+					.wrapper.style2 input[type="button"].special:hover,
+					.wrapper.style2 button.special:hover,
+					.wrapper.style2 .button.special:hover {
+						background-color: #00d69d;
+					}
+
+					.wrapper.style2 input[type="submit"].special:active,
+					.wrapper.style2 input[type="reset"].special:active,
+					.wrapper.style2 input[type="button"].special:active,
+					.wrapper.style2 button.special:active,
+					.wrapper.style2 .button.special:active {
+						background-color: #00a377;
+					}
+
+			.wrapper.style2 label {
+				color: #666;
+			}
+
+			.wrapper.style2 input[type="text"],
+			.wrapper.style2 input[type="password"],
+			.wrapper.style2 input[type="email"],
+			.wrapper.style2 select,
+			.wrapper.style2 textarea {
+				background: rgba(144, 144, 144, 0.075);
+				border-color: rgba(144, 144, 144, 0.25);
+			}
+
+				.wrapper.style2 input[type="text"]:focus,
+				.wrapper.style2 input[type="password"]:focus,
+				.wrapper.style2 input[type="email"]:focus,
+				.wrapper.style2 select:focus,
+				.wrapper.style2 textarea:focus {
+					border-color: #00BC8A;
+					box-shadow: 0 0 0 1px #00BC8A;
+				}
+
+			.wrapper.style2 .select-wrapper:before {
+				color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 input[type="checkbox"] + label,
+			.wrapper.style2 input[type="radio"] + label {
+				color: #777;
+			}
+
+				.wrapper.style2 input[type="checkbox"] + label:before,
+				.wrapper.style2 input[type="radio"] + label:before {
+					background: rgba(144, 144, 144, 0.075);
+					border-color: rgba(144, 144, 144, 0.25);
+				}
+
+			.wrapper.style2 input[type="checkbox"]:checked + label:before,
+			.wrapper.style2 input[type="radio"]:checked + label:before {
+				background-color: #00BC8A;
+				border-color: #00BC8A;
+				color: #ffffff;
+			}
+
+			.wrapper.style2 input[type="checkbox"]:focus + label:before,
+			.wrapper.style2 input[type="radio"]:focus + label:before {
+				border-color: #00BC8A;
+				box-shadow: 0 0 0 1px #00BC8A;
+			}
+
+			.wrapper.style2 ::-webkit-input-placeholder {
+				color: #bbb !important;
+			}
+
+			.wrapper.style2 :-moz-placeholder {
+				color: #bbb !important;
+			}
+
+			.wrapper.style2 ::-moz-placeholder {
+				color: #bbb !important;
+			}
+
+			.wrapper.style2 :-ms-input-placeholder {
+				color: #bbb !important;
+			}
+
+			.wrapper.style2 .formerize-placeholder {
+				color: #bbb !important;
+			}
+
+			.wrapper.style2 form.alt input[type="text"],
+			.wrapper.style2 form.alt input[type="password"],
+			.wrapper.style2 form.alt input[type="email"],
+			.wrapper.style2 form.alt select,
+			.wrapper.style2 form.alt textarea {
+				background-color: transparent;
+			}
+
+			.wrapper.style2 ul.alt li {
+				border-top-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 ul.checklist li:before {
+				color: #00BC8A;
+			}
+
+			.wrapper.style2 ul.contact li:before {
+				color: #00BC8A;
+			}
+
+			.wrapper.style2 header p {
+				color: #bbb;
+			}
+
+			.wrapper.style2 table tbody tr {
+				border-color: rgba(144, 144, 144, 0.25);
+			}
+
+				.wrapper.style2 table tbody tr:nth-child(2n + 1) {
+					background-color: rgba(144, 144, 144, 0.075);
+				}
+
+			.wrapper.style2 table th {
+				color: #666;
+			}
+
+			.wrapper.style2 table thead {
+				border-bottom-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 table tfoot {
+				border-top-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 table.alt tbody tr td {
+				border-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 .split > :nth-child(even) {
+				border-left-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2 .spotlight {
+				background-color: white;
+				border-bottom-color: rgba(144, 144, 144, 0.25);
+			}
+
+			.wrapper.style2.alt {
+				border-top-color: rgba(144, 144, 144, 0.25);
+			}
+
+		@media screen and (max-width: 1366px) {
+
+			.wrapper {
+				padding: 4em 2.5em 2em 2.5em;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.wrapper {
+				padding: 4em 2em 2em 2em;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.wrapper {
+				padding: 3em 2em 1em 2em;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.wrapper {
+				padding: 3em 2em 1em 2em;
+			}
+
+		}
+
+/* Banner */
+
+	#banner {
+		
+		background-size: 100px 100px, cover;
+		color: white;
+		padding: 1.5em 0 1.5em;
+	}
+
+		#banner h2 {
+			font-size: 2.5em;
+			line-height: 1.4;
+			margin-bottom: 0;
+			color: #000;
+		}
+
+		#banner p {
+			font-size: 1.15em;
+			font-weight: bold;
+			line-height: 1.5em;
+			margin-bottom: 1.5em;
+		}
+
+		#banner > .inner {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 70em;
+			width: 100%;
+		}
+
+		@media screen and (max-width: 1366px) {
+
+			#banner {
+				padding: 10em 2.5em 3em;
+			}
+
+				#banner h2 {
+					font-size: 2em;
+				}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			#banner {
+				padding: 10em 2em 2em;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#banner {
+				padding: 8em 2em 2em;
+			}
+
+				#banner h2 {
+					font-size: 1.75em;
+				}
+
+				#banner p {
+					font-size: 1.1em;
+				}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#banner {
+				padding: 8em 2em 2em;
+			}
+
+		}
+
+/* Main */
+
+	#main {
+		padding: 2em 0 2em 0;
+	}
+
+		@media screen and (max-width: 736px) {
+
+			#main {
+				padding: 1em 0 1em 0;
+			}
+
+		}
+
+/* Footer */
+
+	
+	</style>
+<html>
+	<head>
+		<title>GIFT PAGE</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+	</head>
+	<body>
+
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner split">
+					<section>
+						<h2>생일</h2>
+						<h6><a href="index.html">HOME</a></h6>
+					</section>
+
+				</div>
+			</section>
+
+		
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2 alt">
+				<div class="inner">
+					<div class="spotlight">
+						
+						<div class="image">
+							<img src="webimages/무드등.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>무드등 </h3>
+							<p>자기 전 고민이 많은 친구에게 <br>(1~3만원대)</p>
+							<ul class="actions">
+								<li><a href="https://www.coupang.com/np/search?component=&q=%EB%AC%B4%EB%93%9C%EB%93%B1&channel=user" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="spotlight">
+						<div class="image">
+							<img src="webimages/러쉬입욕제.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>입욕제 </h3>
+							<p>목욕하는 걸 좋아하는 친구에게<br>(1~2만원대)</p>
+							<ul class="actions">
+								<li><a href="https://www.coupang.com/np/search?component=&q=%EB%9F%AC%EC%89%AC%EC%9E%85%EC%9A%95%EC%A0%9C&channel=user" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="spotlight">
+						<div class="image">
+							<img src="webimages/케이크.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>케이크 </h3>
+							<p>생일 주인공에게!<br>(2~5만원대)</p>
+							<ul class="actions">
+								<li><a href="https://www.coupang.com/np/search?component=&q=%EC%BC%80%EC%9D%B4%ED%81%AC&channel=user" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="spotlight">
+						<div class="image">
+							<img src="webimages/기프티콘.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>기프티콘 </h3>
+							<p>어떤걸 선물해야 좋을지 모르겠는 친구에게<br>(1~n만원대)</p>
+							<ul class="actions">
+								<li><a href="http://www.gifticon.com/shopping/shopping_productList.do?prodDispId=FS0002" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="spotlight">
+						<div class="image">
+							<img src="webimages/바디필로우.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>바디필로우 </h3>
+							<p>포근한 베개가 필요한 친구에게<br>(1~2만원대)</p>
+							<ul class="actions">
+								<li><a href="https://www.coupang.com/np/search?component=&q=%EB%B0%94%EB%94%94%ED%95%84%EB%A1%9C%EC%9A%B0&channel=user" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="spotlight">
+						<div class="image">
+							<img src="webimages/캔들.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>캔들 </h3>
+							<p>방 분위기를 내고 싶어하는 친구에게 <br>(1~2만원대)</p>
+							<ul class="actions">
+								<li><a href="https://www.coupang.com/np/search?component=&q=%EC%BA%94%EB%93%A4&channel=user" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="spotlight">
+						<div class="image">
+							<img src="webimages/무선충전기.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>무선충전기 </h3>
+							<p>핸드폰 배터리가 빨리 닳는 친구에게 <br>(1~3만원대)</p>
+							<ul class="actions">
+								<li><a href="https://www.coupang.com/np/search?component=&q=%EB%AC%B4%EC%84%A0%EC%B6%A9%EC%A0%84%EA%B8%B0&channel=user" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="spotlight">
+						<div class="image">
+							<img src="webimages/볼캡.png" alt="" />
+						</div>
+						<div class="content">
+							<h3>볼캡 </h3>
+							<p>패션을 좋아하는 친구에게<br> (1~2만원대)</p>
+							<ul class="actions">
+								<li><a href="https://www.coupang.com/np/search?component=&q=%EB%B3%BC%EC%BA%A1&channel=user" class="button alt">Details</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			
+
+	</body>
+</html>
